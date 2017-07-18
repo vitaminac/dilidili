@@ -358,5 +358,5 @@ __pycache__/
 *.xsd.cs
 
 *.docx
-/static/
-!/static/math/**
+/client/client.iml
+/client/package-lock.json
