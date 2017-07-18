@@ -1,0 +1,23 @@
+@import '../abstracts/color';
+@import '../abstracts/resources';
+
+@mixin light-theme {
+  background-color: $hight-light-white;
+  //background-image: $bakground;
+  background-size: cover;
+
+  header {
+    background-color: $light-white;
+    border-bottom: 1px solid $light-white;
+
+    &::before {
+      color: $pink-red;
+      font-family: 'Signika', 'Roboto', sans-serif;
+      font-size: 20px;
+    }
+  }
+}
+
+.light {
+  @include light-theme;
+}

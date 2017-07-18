@@ -1,0 +1,238 @@
+{% extends "base.html" %}
+{% block title %}react{% endblock %}
+{% block author %}react{% endblock %}
+{% block scriptInclude %}
+    {{ super() }}
+    <script type="text/javascript">
+        var json = JSON.parse(JSON.stringify([{
+            "name": "海賊王",
+            "url": "http://www.cartoonmad.com/m/comic/1152.html",
+            "logo": "http://img.cartoonmad.com/ctimgc/1152c.jpg"
+        }, {"name": "進擊的巨人", "url": "http://www.cartoonmad.com/m/comic/1221.html", "logo": "http://img.cartoonmad.com/ctimgc/1221c.jpg"}, {
+            "name": "魔導少年",
+            "url": "http://www.cartoonmad.com/m/comic/1153.html",
+            "logo": "http://img.cartoonmad.com/ctimgc/1153c.jpg"
+        }, {"name": "食戟之靈", "url": "http://www.cartoonmad.com/m/comic/1698.html", "logo": "http://img.cartoonmad.com/ctimgc/1698c.jpg"}, {
+            "name": "一拳超人",
+            "url": "http://www.cartoonmad.com/m/comic/3583.html",
+            "logo": "http://img.cartoonmad.com/ctimgc/3583c.jpg"
+        }, {"name": "監獄學園", "url": "http://www.cartoonmad.com/m/comic/1416.html", "logo": "http://img.cartoonmad.com/ctimgc/1416c.jpg"}, {
+            "name": "獵人",
+            "url": "http://www.cartoonmad.com/m/comic/1155.html",
+            "logo": "http://img.cartoonmad.com/ctimgc/1155c.jpg"
+        }, {"name": "新著龍虎門", "url": "http://www.cartoonmad.com/m/comic/1037.html", "logo": "http://img.cartoonmad.com/ctimgc/1037c.jpg"}, {
+            "name": "七原罪",
+            "url": "http://www.cartoonmad.com/m/comic/2504.html",
+            "logo": "http://img.cartoonmad.com/ctimgc/2504c.jpg"
+        }, {"name": "王者天下", "url": "http://www.cartoonmad.com/m/comic/1122.html", "logo": "http://img.cartoonmad.com/ctimgc/1122c.jpg"}, {
+            "name": "源君物語",
+            "url": "http://www.cartoonmad.com/m/comic/1427.html",
+            "logo": "http://img.cartoonmad.com/ctimgc/1427c.jpg"
+        }, {"name": "東京食屍鬼RE", "url": "http://www.cartoonmad.com/m/comic/4270.html", "logo": "http://img.cartoonmad.com/ctimgc/4270c.jpg"}, {
+            "name": "出包王女 Dar",
+            "url": "http://www.cartoonmad.com/m/comic/1261.html",
+            "logo": "http://img.cartoonmad.com/ctimgc/1261c.jpg"
+        }, {"name": "魔笛MAGI", "url": "http://www.cartoonmad.com/m/comic/1050.html", "logo": "http://img.cartoonmad.com/ctimgc/1050c.jpg"}, {
+            "name": "西遊",
+            "url": "http://www.cartoonmad.com/m/comic/4485.html",
+            "logo": "http://img.cartoonmad.com/ctimgc/4485c.jpg"
+        }, {"name": "銀魂", "url": "http://www.cartoonmad.com/m/comic/1103.html", "logo": "http://img.cartoonmad.com/ctimgc/1103c.jpg"}, {
+            "name": "名偵探柯南",
+            "url": "http://www.cartoonmad.com/m/comic/1066.html",
+            "logo": "http://img.cartoonmad.com/ctimgc/1066c.jpg"
+        }, {"name": "火鳳燎原", "url": "http://www.cartoonmad.com/m/comic/1104.html", "logo": "http://img.cartoonmad.com/ctimgc/1104c.jpg"}, {
+            "name": "行屍走肉",
+            "url": "http://www.cartoonmad.com/m/comic/1204.html",
+            "logo": "http://img.cartoonmad.com/ctimgc/1204c.jpg"
+        }, {"name": "奈奈與薰的SM日", "url": "http://www.cartoonmad.com/m/comic/1589.html", "logo": "http://img.cartoonmad.com/ctimgc/1589c.jpg"}, {
+            "name": "親吻姐姐",
+            "url": "http://www.cartoonmad.com/m/comic/1290.html",
+            "logo": "http://img.cartoonmad.com/ctimgc/1290c.jpg"
+        }, {"name": "我的禽獸男友", "url": "http://www.cartoonmad.com/m/comic/2265.html", "logo": "http://img.cartoonmad.com/ctimgc/2265c.jpg"}, {
+            "name": "黑執事",
+            "url": "http://www.cartoonmad.com/m/comic/1287.html",
+            "logo": "http://img.cartoonmad.com/ctimgc/1287c.jpg"
+        }, {"name": "華麗的挑戰", "url": "http://www.cartoonmad.com/m/comic/1286.html", "logo": "http://img.cartoonmad.com/ctimgc/1286c.jpg"}, {
+            "name": "我的英雄學院",
+            "url": "http://www.cartoonmad.com/m/comic/4085.html",
+            "logo": "http://img.cartoonmad.com/ctimgc/4085c.jpg"
+        }, {"name": "驚爆遊戲", "url": "http://www.cartoonmad.com/m/comic/1313.html", "logo": "http://img.cartoonmad.com/ctimgc/1313c.jpg"}, {
+            "name": "堀與宮村",
+            "url": "http://www.cartoonmad.com/m/comic/1798.html",
+            "logo": "http://img.cartoonmad.com/ctimgc/1798c.jpg"
+        }, {"name": "翼與螢火蟲", "url": "http://www.cartoonmad.com/m/comic/3319.html", "logo": "http://img.cartoonmad.com/ctimgc/3319c.jpg"}, {
+            "name": "第一神拳",
+            "url": "http://www.cartoonmad.com/m/comic/1078.html",
+            "logo": "http://img.cartoonmad.com/ctimgc/1078c.jpg"
+        }, {"name": "鄰居同居LDK", "url": "http://www.cartoonmad.com/m/comic/2263.html", "logo": "http://img.cartoonmad.com/ctimgc/2263c.jpg"}]));
+        var abc = JSON.parse(JSON.stringify([{
+            "name": "王者天下",
+            "url": "http://www.ikanman.com/comic/4841/",
+            "logo": "http://i.3qfm.com/cpic/b/4841.jpg"
+        }, {
+            "name": "绯弹的亚莉亚AA",
+            "url": "http://www.ikanman.com/comic/4358/",
+            "logo": "http://i.3qfm.com/cpic/b/4358.jpg"
+        }, {"name": "新著龙虎门", "url": "http://www.ikanman.com/comic/3792/", "logo": "http://i.3qfm.com/cpic/b/3792.jpg"}, {
+            "name": "命运的秘密",
+            "url": "http://www.ikanman.com/comic/23302/",
+            "logo": "http://i.3qfm.com/cpic/b/23302.jpg"
+        }, {"name": "Slow Start", "url": "http://www.ikanman.com/comic/14804/", "logo": "http://i.3qfm.com/cpic/b/14804.jpg"}, {
+            "name": "BanG Dream",
+            "url": "http://www.ikanman.com/comic/22705/",
+            "logo": "http://i.3qfm.com/cpic/b/22705.jpg"
+        }, {"name": "肌肉少女：哑铃，能举多少公斤？", "url": "http://www.ikanman.com/comic/21179/", "logo": "http://i.3qfm.com/cpic/b/21179.jpg"}, {
+            "name": "妄想高校教员森下",
+            "url": "http://www.ikanman.com/comic/18427/",
+            "logo": "http://i.3qfm.com/cpic/b/18427.jpg"
+        }, {"name": "拳愿阿修罗", "url": "http://www.ikanman.com/comic/15248/", "logo": "http://i.3qfm.com/cpic/b/15248.jpg"}, {
+            "name": "我家大师兄脑子有坑",
+            "url": "http://www.ikanman.com/comic/18151/",
+            "logo": "http://i.3qfm.com/cpic/b/18151.jpg"
+        }, {"name": "来吧 和我谈一场恋爱extra", "url": "http://www.ikanman.com/comic/24186/", "logo": "http://i.3qfm.com/cpic/b/24186.jpg"}, {
+            "name": "十年爱-Decade of Love-",
+            "url": "http://www.ikanman.com/comic/24185/",
+            "logo": "http://i.3qfm.com/cpic/b/24185.jpg"
+        }, {"name": "妖宿山", "url": "http://www.ikanman.com/comic/21550/", "logo": "http://i.3qfm.com/cpic/b/21550.jpg"}, {
+            "name": "雏子的笔记",
+            "url": "http://www.ikanman.com/comic/22357/",
+            "logo": "http://i.3qfm.com/cpic/b/22357.jpg"
+        }, {"name": "恐怖骑士", "url": "http://www.ikanman.com/comic/23953/", "logo": "http://i.3qfm.com/cpic/b/23953.jpg"}, {
+            "name": "本草仙云之梦白蛇",
+            "url": "http://www.ikanman.com/comic/22109/",
+            "logo": "http://i.3qfm.com/cpic/b/22109.jpg"
+        }, {"name": "王爵的私有宝贝", "url": "http://www.ikanman.com/comic/23700/", "logo": "http://i.3qfm.com/cpic/b/23700.jpg"}, {
+            "name": "上吧，大吉凛！",
+            "url": "http://www.ikanman.com/comic/21920/",
+            "logo": "http://i.3qfm.com/cpic/b/21920.jpg"
+        }, {"name": "即刻出发", "url": "http://www.ikanman.com/comic/23687/", "logo": "http://i.3qfm.com/cpic/b/23687.jpg"}, {
+            "name": "西游少年阿空传",
+            "url": "http://www.ikanman.com/comic/21211/",
+            "logo": "http://i.3qfm.com/cpic/b/21211.jpg"
+        }, {"name": "这如果叫作爱情 感觉会很恶心", "url": "http://www.ikanman.com/comic/20476/", "logo": "http://i.3qfm.com/cpic/b/20476.jpg"}, {
+            "name": "重生豪门之强势归来",
+            "url": "http://www.ikanman.com/comic/23478/",
+            "logo": "http://i.3qfm.com/cpic/b/23478.jpg"
+        }, {"name": "英雄？我早就不当了", "url": "http://www.ikanman.com/comic/22676/", "logo": "http://i.3qfm.com/cpic/b/22676.jpg"}, {
+            "name": "请别告诉我这是三国正史！",
+            "url": "http://www.ikanman.com/comic/20486/",
+            "logo": "http://i.3qfm.com/cpic/b/20486.jpg"
+        }, {"name": "变身之后，我与她的狂想曲", "url": "http://www.ikanman.com/comic/22143/", "logo": "http://i.3qfm.com/cpic/b/22143.jpg"}, {
+            "name": "天后十六岁",
+            "url": "http://www.ikanman.com/comic/24184/",
+            "logo": "http://i.3qfm.com/cpic/b/24184.jpg"
+        }, {"name": "黄雀传", "url": "http://www.ikanman.com/comic/23378/", "logo": "http://i.3qfm.com/cpic/b/23378.jpg"}, {
+            "name": "寻师伏魔录",
+            "url": "http://www.ikanman.com/comic/23477/",
+            "logo": "http://i.3qfm.com/cpic/b/23477.jpg"
+        }, {"name": "人间失格", "url": "http://www.ikanman.com/comic/23839/", "logo": "http://i.3qfm.com/cpic/b/23839.jpg"}, {
+            "name": "Americano-exodus",
+            "url": "http://www.ikanman.com/comic/13474/",
+            "logo": "http://i.3qfm.com/cpic/b/13474.jpg"
+        }, {"name": "妃·夕妍雪", "url": "http://www.ikanman.com/comic/8000/", "logo": "http://i.3qfm.com/cpic/b/8000.jpg"}, {
+            "name": "古惑仔",
+            "url": "http://www.ikanman.com/comic/8928/",
+            "logo": "http://i.3qfm.com/cpic/b/8928.jpg"
+        }, {"name": "东京喰种RE", "url": "http://www.ikanman.com/comic/16058/", "logo": "http://i.3qfm.com/cpic/b/16058.jpg"}, {
+            "name": "一拳超人原作版",
+            "url": "http://www.ikanman.com/comic/9637/",
+            "logo": "http://i.3qfm.com/cpic/b/9637.jpg"
+        }, {"name": "西游", "url": "http://www.ikanman.com/comic/17515/", "logo": "http://i.3qfm.com/cpic/b/17515.jpg"}, {
+            "name": "绝世唐门",
+            "url": "http://www.ikanman.com/comic/8356/",
+            "logo": "http://i.3qfm.com/cpic/b/8356.jpg"
+        }, {"name": "盘龙", "url": "http://www.ikanman.com/comic/7923/", "logo": "http://i.3qfm.com/cpic/b/7923.jpg"}, {
+            "name": "要听神明的话",
+            "url": "http://www.ikanman.com/comic/362/",
+            "logo": "http://i.3qfm.com/cpic/b/362.jpg"
+        }, {"name": "妖神记", "url": "http://www.ikanman.com/comic/17965/", "logo": "http://i.3qfm.com/cpic/b/17965.jpg"}, {
+            "name": "一拳超人",
+            "url": "http://www.ikanman.com/comic/7580/",
+            "logo": "http://i.3qfm.com/cpic/b/7580.jpg"
+        }, {"name": "我家大师兄脑子有坑", "url": "http://www.ikanman.com/comic/18151/", "logo": "http://i.3qfm.com/cpic/b/18151.jpg"}, {
+            "name": "凤逆天下",
+            "url": "http://www.ikanman.com/comic/17206/",
+            "logo": "http://i.3qfm.com/cpic/b/17206.jpg"
+        }, {"name": "龙族II", "url": "http://www.ikanman.com/comic/8007/", "logo": "http://i.3qfm.com/cpic/b/8007.jpg"}, {
+            "name": "美型妖精大混战",
+            "url": "http://www.ikanman.com/comic/8004/",
+            "logo": "http://i.3qfm.com/cpic/b/8004.jpg"
+        }, {"name": "星空Club", "url": "http://www.ikanman.com/comic/8199/", "logo": "http://i.3qfm.com/cpic/b/8199.jpg"}, {
+            "name": "我在麻理体内",
+            "url": "http://www.ikanman.com/comic/3520/",
+            "logo": "http://i.3qfm.com/cpic/b/3520.jpg"
+        }, {"name": "公子不要啊！", "url": "http://www.ikanman.com/comic/19310/", "logo": "http://i.3qfm.com/cpic/b/19310.jpg"}, {
+            "name": "加油大魔王",
+            "url": "http://www.ikanman.com/comic/8001/",
+            "logo": "http://i.3qfm.com/cpic/b/8001.jpg"
+        }, {"name": "甘美的花之血族", "url": "http://www.ikanman.com/comic/8079/", "logo": "http://i.3qfm.com/cpic/b/8079.jpg"}, {
+            "name": "狂野少女",
+            "url": "http://www.ikanman.com/comic/10274/",
+            "logo": "http://i.3qfm.com/cpic/b/10274.jpg"
+        }, {"name": "人渣的本愿", "url": "http://www.ikanman.com/comic/7029/", "logo": "http://i.3qfm.com/cpic/b/7029.jpg"}, {
+            "name": "史上最强弟子兼一",
+            "url": "http://www.ikanman.com/comic/2807/",
+            "logo": "http://i.3qfm.com/cpic/b/2807.jpg"
+        }, {"name": "姐姐不可能那么可爱", "url": "http://www.ikanman.com/comic/4389/", "logo": "http://i.3qfm.com/cpic/b/4389.jpg"}, {
+            "name": "如来神掌",
+            "url": "http://www.ikanman.com/comic/15215/",
+            "logo": "http://i.3qfm.com/cpic/b/15215.jpg"
+        }, {"name": "来吧 和我谈一场恋爱extra", "url": "http://www.ikanman.com/comic/24186/", "logo": "http://i.3qfm.com/cpic/b/24186.jpg"}, {
+            "name": "十年爱-Decade of Love-",
+            "url": "http://www.ikanman.com/comic/24185/",
+            "logo": "http://i.3qfm.com/cpic/b/24185.jpg"
+        }, {"name": "天后十六岁", "url": "http://www.ikanman.com/comic/24184/", "logo": "http://i.3qfm.com/cpic/b/24184.jpg"}, {
+            "name": "无畏魔女 prequel 欧拉西亚的大地",
+            "url": "http://www.ikanman.com/comic/24183/",
+            "logo": "http://i.3qfm.com/cpic/b/24183.jpg"
+        }, {"name": "神奇女侠 传奇", "url": "http://www.ikanman.com/comic/24182/", "logo": "http://i.3qfm.com/cpic/b/24182.jpg"}, {
+            "name": "石井馆长变妹了",
+            "url": "http://www.ikanman.com/comic/24181/",
+            "logo": "http://i.3qfm.com/cpic/b/24181.jpg"
+        }, {"name": "蝙蝠仔", "url": "http://www.ikanman.com/comic/24180/", "logo": "http://i.3qfm.com/cpic/b/24180.jpg"}, {
+            "name": "日安神明",
+            "url": "http://www.ikanman.com/comic/24179/",
+            "logo": "http://i.3qfm.com/cpic/b/24179.jpg"
+        }, {"name": "武道! ", "url": "http://www.ikanman.com/comic/24178/", "logo": "http://i.3qfm.com/cpic/b/24178.jpg"}, {
+            "name": "关键鬼牌三国志",
+            "url": "http://www.ikanman.com/comic/24177/",
+            "logo": "http://i.3qfm.com/cpic/b/24177.jpg"
+        }, {"name": "No.5 吾", "url": "http://www.ikanman.com/comic/24176/", "logo": "http://i.3qfm.com/cpic/b/24176.jpg"}, {
+            "name": "《伊苏Ⅷ：达娜的安魂曲》资料设定集",
+            "url": "http://www.ikanman.com/comic/24175/",
+            "logo": "http://i.3qfm.com/cpic/b/24175.jpg"
+        }, {"name": "星武神诀", "url": "http://www.ikanman.com/comic/20568/", "logo": "http://i.3qfm.com/cpic/b/20568.jpg"}, {
+            "name": "王爷你好贱",
+            "url": "http://www.ikanman.com/comic/20510/",
+            "logo": "http://i.3qfm.com/cpic/b/20510.jpg"
+        }, {"name": "百炼成神", "url": "http://www.ikanman.com/comic/19785/", "logo": "http://i.3qfm.com/cpic/b/19785.jpg"}, {
+            "name": "外星人饲养手册",
+            "url": "http://www.ikanman.com/comic/22496/",
+            "logo": "http://i.3qfm.com/cpic/b/22496.jpg"
+        }, {"name": "公子不要啊！", "url": "http://www.ikanman.com/comic/19310/", "logo": "http://i.3qfm.com/cpic/b/19310.jpg"}, {
+            "name": "无敌勇者王",
+            "url": "http://www.ikanman.com/comic/22088/",
+            "logo": "http://i.3qfm.com/cpic/b/22088.jpg"
+        }, {"name": "博人传BORUTO", "url": "http://www.ikanman.com/comic/20224/", "logo": "http://i.3qfm.com/cpic/b/20224.jpg"}, {
+            "name": "驭灵师",
+            "url": "http://www.ikanman.com/comic/21326/",
+            "logo": "http://i.3qfm.com/cpic/b/21326.jpg"
+        }, {"name": "微微一笑很倾城", "url": "http://www.ikanman.com/comic/21150/", "logo": "http://i.3qfm.com/cpic/b/21150.jpg"}, {
+            "name": "龙域猎手",
+            "url": "http://www.ikanman.com/comic/21778/",
+            "logo": "http://i.3qfm.com/cpic/b/21778.jpg"
+        }, {"name": "汤摇庄的幽奈同学", "url": "http://www.ikanman.com/comic/19397/", "logo": "http://i.3qfm.com/cpic/b/19397_70.jpg"}, {
+            "name": "唐寅在异界",
+            "url": "http://www.ikanman.com/comic/22126/",
+            "logo": "http://i.3qfm.com/cpic/b/22126.jpg"
+        }]));
+    </script>
+    <script type="text/javascript" src="https://unpkg.com/react/dist/react.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/react-dom/dist/react-dom.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/rxjs/bundles/Rx.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/Olical/EventEmitter/master/EventEmitter.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/mgalante/jquery.redirect/master/jquery.redirect.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/ilinsky/jquery-xpath/master/jquery.xpath.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/immutable/3.8.1/immutable.js"></script>
+    {% include "sited/index.html" ignore missing with context %}
+{% endblock %}

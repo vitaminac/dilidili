@@ -1,0 +1,27 @@
+@import '../abstracts/zindex';
+@import '../abstracts/color';
+
+.processbar {
+  background: linear-gradient(to right, $white 0, $khaki 33%, $green 66%, $dark-red 100%);
+  display: block;
+  height: 4px;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: $process-bar-level;
+
+  &::selection {
+    background: $weak-khaki;
+    color: $black;
+    fill: $black;
+    text-shadow: 0 1px $weak-weak-khaki;
+  }
+}
+
+.hideprocessbar {
+  background-color: $white;
+  display: block;
+  margin-left: auto;
+  width: 100%;
+}

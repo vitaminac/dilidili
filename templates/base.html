@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>{% block title %}type in here the title{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3, minimum-scale=1">
+    <meta name="author" content="{% block author %}me{% endblock %}">
+    <meta name="description" content="{% block description %}description{% endblock %}">
+    <link rel="icon" href="{% block icon %}https://image.flaticon.com/icons/png/512/79/79176.png{% endblock %}">
+    {% block styleInclude %}
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    {% endblock %}
+    {% block scriptInclude %}
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% endblock %}
+    {% block userDefinedstyle %}{% endblock %}
+    {% block userDefinedscript %}{% endblock %}
+</head>
+<body>
+{% block body %}{% endblock %}
+</body>
+</html>
