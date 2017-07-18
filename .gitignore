@@ -360,5 +360,3 @@ __pycache__/
 *.docx
 /client/client.iml
 /client/package-lock.json
-/static/
-!/static/math/
