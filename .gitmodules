@@ -1,0 +1,3 @@
+[submodule "danmaku"]
+	path = danmaku
+	url = https://github.com/vitaminac/us-danmaku.git

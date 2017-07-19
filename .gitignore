@@ -362,3 +362,4 @@ __pycache__/
 /client/package-lock.json
 /static/
 !/static/math/
+/sh.exe.stackdump
