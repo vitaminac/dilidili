@@ -1,7 +1,7 @@
-import { PureComponent } from "react";
+import React from "react";
 import style from "StyleSheets/components/_processbar";
 
-export default class ProcessBar extends PureComponent {
+export default class ProcessBar extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
