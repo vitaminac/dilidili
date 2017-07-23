@@ -222,6 +222,9 @@
     "no-magic-numbers"                        : [
       "error",
       {
+        "ignore"       : [
+          1
+        ],
         "enforceConst" : true
       }
     ],

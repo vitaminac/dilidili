@@ -61,7 +61,7 @@
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.11.2",
     "fs-extra": "latest",
-    "html-minifier": "latest",
+    "html-minifier": "^3.5.3",
     "html-webpack-plugin": "^2.29.0",
     "mv": "^2.1.1",
     "node-sass": "^4.5.3",
@@ -80,15 +80,15 @@
     "webpack": "^3.3.0",
     "webpack-bundle-analyzer": "^2.8.3",
     "webpack-chunk-hash": "^0.4.0",
-    "webpack-dev-server": "^2.5.1",
+    "webpack-dev-server": "^2.6.0",
     "webpack-manifest-plugin": "^1.1.2",
     "webpack-merge": "^4.1.0",
     "webpack-shell-plugin": "^0.5.0"
   },
   "scripts": {
-    "build": "set NODE_ENV=CommonJS&&webpack --config webpack.config.js",
-    "build-dev": "set NODE_ENV=development&&webpack --config webpack.config.js",
-    "build-prod": "set NODE_ENV=production&& webpack --display-reasons --display-modules --config webpack.config.js",
+    "build": "set NODE_ENV=CommonJS&&node ./node_modules/webpack/bin/webpack.js --config webpack.config.js",
+    "build-dev": "set NODE_ENV=development&&node ./node_modules/webpack/bin/webpack.js --config webpack.config.js",
+    "build-prod": "set NODE_ENV=production&&node ./node_modules/webpack/bin/webpack.js --display-reasons --display-modules --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "browserslist": {
