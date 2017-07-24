@@ -363,3 +363,5 @@ __pycache__/
 /static/
 !/static/math/
 /sh.exe.stackdump
+
+/test/
