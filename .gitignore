@@ -365,3 +365,5 @@ __pycache__/
 /sh.exe.stackdump
 
 /test/
+
+/.mypy_cache
