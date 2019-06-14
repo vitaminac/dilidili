@@ -1,0 +1,71 @@
+@import '../abstracts/layout';
+@import '../abstracts/color';
+
+.footer {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  outline: none;
+  padding: 0 30px;
+
+  * {
+    box-sizing: border-box;
+    outline: none;
+  }
+
+  &::before {
+    border-bottom: 3px solid $sea-blue;
+    content: '';
+    display: block;
+    height: 0;
+    left: 50%;
+    margin-left: -35%;
+    position: absolute;
+    top: -5px;
+    width: 70%;
+  }
+
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin-bottom: 15px;
+    margin-left: 0;
+    padding: 0;
+  }
+
+  li {
+    display: list-item;
+    list-style: none;
+    text-align: match-parent;
+
+    a {
+      color: $sea-blue;
+      text-decoration: none;
+
+      &:any-link {
+        color: $sea-blue;
+        cursor: auto;
+      }
+    }
+
+    svg {
+      display: inline-block;
+      height: 25px;
+      justify-content: space-between;
+      transform-origin: 50% 50% 0;
+      vertical-align: middle;
+      width: 25px;
+    }
+
+    path {
+      fill: $unknown-black;
+    }
+  }
+}

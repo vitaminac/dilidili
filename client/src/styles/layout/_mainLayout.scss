@@ -1,0 +1,46 @@
+@import '../abstracts/layout';
+
+@mixin content-item {
+  position: relative;
+}
+
+.mainlayout {
+  cursor: auto;
+  display: block;
+  height: 100vh;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+
+  header {
+    @include content-item;
+
+    height: $header-height;
+    line-height: $header-height;
+
+    &::before {
+      height: $header-height;
+      padding-left: 30px;
+      padding-right: 5px;
+      width: 150px;
+    }
+  }
+
+  footer {
+    @include content-item;
+
+    height: $footer-height;
+  }
+
+  article {
+    @include content-item;
+
+    display: inline-block;
+    height: calc(100vh - #{$header-height} - #{$footer-height});
+    // margin-top: $header-height;
+    overflow-y: scroll;
+  }
+}

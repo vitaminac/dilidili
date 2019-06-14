@@ -1,0 +1,61 @@
+@import '../abstracts/color';
+// Add some padding inside the card container
+@import '../base/container';
+// description container
+@mixin description-container {
+  @extend %container;
+  // children
+  h4 {
+    // text style
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 1px 2px $grey;
+  }
+}
+
+.card {
+  border-radius: 5px;
+  //  Add shadows to create the "card" effect
+  box-shadow: 0 4px 8px 0 $grey;
+  display: none;
+  position: relative;
+  // On mouse-over, add a deeper shadow
+  &:hover {
+    box-shadow: 0 8px 16px 0 $grey;
+  }
+  // children
+  img {
+    border-radius: 5px 5px 0 0;
+  }
+}
+
+.descriptioncontainer {
+  @include description-container;
+}
+
+// card container
+@mixin card-container {
+  display: inline-flex;
+  margin: 8px;
+  max-width: 20%;
+  min-width: 20px;
+  // padding: 2px 16px;
+  transition: all .5s ease-out .1s;
+}
+
+// draggableCard
+.cardcontainer {
+  @include card-container;
+}
+
+@import '../base/isdragging';
+// draggableCard
+.isdragging {
+  @include is-dragging;
+  // transparency
+  background-color: $light-gray;
+  border: 2px dashed $grey;
+  box-shadow: 0 0 1px 1px $grey;
+  // efect
+  transform: scale(.9);
+}

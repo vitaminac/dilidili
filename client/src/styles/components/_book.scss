@@ -1,0 +1,22 @@
+@import '../abstracts/color';
+// book container
+.book {
+  background-color: $blur;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+@import '../abstracts/zindex';
+// show hide
+.hide {
+  display: none;
+  z-index: $book-hide-level;
+}
+
+.show {
+  display: block;
+  z-index: $book-revealed-level;
+}
