@@ -1,5 +1,14 @@
+FROM node:alpine as fronted
+
+WORKDIR /frontend
+
+COPY ./frontend ./
+
+RUN npm install
+RUN npm run build
+
 # Pull a pre-built alpine docker image with nginx and python3 installed
-FROM tiangolo/uwsgi-nginx-flask:python3.6-alpine3.7
+FROM tiangolo/uwsgi-nginx-flask:python3.7-alpine3.7
 
 # Set the port on which the app runs; make both values the same.
 #
@@ -18,13 +27,15 @@ ENV UWSGI_INI uwsgi.ini
 # app's folder. Note that when multiple apps share a folder, you should create subfolders
 # with the same name as the app underneath "static" so there aren't any collisions
 # when all those static files are collected together.
-ENV STATIC_URL /react/build
+ENV STATIC_URL /static
+ENV STATIC_INDEX 1
 
 # Set the folder where uwsgi looks for the app
 WORKDIR /app
 
 # Copy the app contents to the image
-COPY . /app
+COPY ./backend /app
+COPY --from=fronted /frontend/build /app/static
 
 # If you have additional requirements beyond Flask (which is included in the
 # base image), generate a requirements.txt file with pip freeze and uncomment
