@@ -105,3 +105,6 @@ venv.bak/
 
 .vscode/
 settings.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/task.json
