@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { TITLE, BANNER } from './config';
+import { Header } from './Header';
 
 class App extends React.Component {
     constructor(props) {
@@ -12,6 +14,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
+        document.title = TITLE;
         fetch("/api/")
             .then(response => response.text())
             .then(text => this.setState({ test: text }));
@@ -20,6 +23,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
+                <Header banner={BANNER} />
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
                     <p>Edit <code>src/App.js</code> and save to reload.</p>
