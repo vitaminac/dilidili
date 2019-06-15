@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { TITLE, BANNER } from './config';
 import { Header } from './Header';
+import { Footer } from './Footer';
 
 class App extends React.Component {
     constructor(props) {
@@ -34,9 +35,10 @@ class App extends React.Component {
                         rel="noopener noreferrer"
                     >
                         Learn React
-        </a>
+                    </a>
                     {this.state.test}
                 </header>
+                <Footer />
             </div>
         );
     }
