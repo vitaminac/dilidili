@@ -18,7 +18,7 @@ ENV UWSGI_INI uwsgi.ini
 # app's folder. Note that when multiple apps share a folder, you should create subfolders
 # with the same name as the app underneath "static" so there aren't any collisions
 # when all those static files are collected together.
-ENV STATIC_URL /app/static
+ENV STATIC_URL /react/build
 
 # Set the folder where uwsgi looks for the app
 WORKDIR /app
