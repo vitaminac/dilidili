@@ -6,7 +6,7 @@
         {
             "label": "react-server",
             "type": "shell",
-            "command": "npm start --prefix react"
+            "command": "npm start --prefix frontend"
         }
     ]
 }
