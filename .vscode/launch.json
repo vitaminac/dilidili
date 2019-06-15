@@ -5,18 +5,29 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: Flask",
+            "type": "python",
+            "request": "launch",
+            "module": "flask",
+            "env": {
+                "FLASK_APP": "backend/main:app",
+                "FLASK_ENV": "development",
+                "FLASK_DEBUG": "0"
+            },
+            "args": [
+                "run",
+                "--no-debugger",
+                "--no-reload"
+            ],
+            "jinja": true
+        },
+        {
             "type": "chrome",
             "request": "launch",
             "name": "Debug React",
             "url": "http://localhost:3000",
             "webRoot": "${workspaceFolder}/react",
             "preLaunchTask": "react-server"
-        },
-        {
-            "name": "Application",
-            "type": "python",
-            "request": "launch",
-            "program": "${workspaceFolder}/application.py",
         }
     ]
 }
