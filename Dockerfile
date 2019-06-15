@@ -28,6 +28,8 @@ ENV UWSGI_INI uwsgi.ini
 # with the same name as the app underneath "static" so there aren't any collisions
 # when all those static files are collected together.
 ENV STATIC_URL /static
+
+# If STATIC_INDEX is 1, serve / with /static/index.html directly (or the static URL configured)
 ENV STATIC_INDEX 1
 
 # Set the folder where uwsgi looks for the app
@@ -36,6 +38,7 @@ WORKDIR /app
 # Copy the app contents to the image
 COPY ./backend /app
 COPY --from=fronted /frontend/build /app/static
+RUN mv /app/static/static/* /app/static
 
 # If you have additional requirements beyond Flask (which is included in the
 # base image), generate a requirements.txt file with pip freeze and uncomment
