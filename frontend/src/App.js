@@ -4,6 +4,8 @@ import './App.css';
 import { TITLE, BANNER } from './config';
 import { Header } from './Header';
 import { Footer } from './Footer';
+import $ from 'jquery';
+window.$ = $;
 
 class App extends React.Component {
     constructor(props) {
@@ -16,6 +18,7 @@ class App extends React.Component {
 
     componentDidMount() {
         document.title = TITLE;
+        // TODO remove testing code
         fetch("/api/")
             .then(response => response.text())
             .then(text => this.setState({ test: text }));
