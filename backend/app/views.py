@@ -1,9 +1,10 @@
-from flask import request, jsonify
-from . import api
+from flask import request, jsonify, Blueprint
+
+root = Blueprint('root', __name__)
 
 
-@api.route('/')
-def root():
+@root.route('/')
+def search():
     keyword = request.args.get('keyword')
     if keyword is not None:
         # TODO: seach api

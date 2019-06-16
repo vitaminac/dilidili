@@ -45,4 +45,4 @@ RUN mv /app/static/static/* /app/static
 # the next three lines.
 #COPY requirements.txt /
 #RUN pip install --no-cache-dir -U pip
-#RUN pip install --no-cache-dir -r /requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
