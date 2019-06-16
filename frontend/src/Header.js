@@ -1,7 +1,15 @@
 import React from 'react';
 import './Header.css';
+import $ from 'jquery';
 
 export class Header extends React.Component {
+    seatch(e) {
+        // TODO
+        e.preventDefault();
+        var content = $("#search_form").children('#search_content').val();
+        window.location = "#/search/" + content
+    }
+
     render() {
         return (
             <div id="main-header" className="needstick">
@@ -98,14 +106,14 @@ export class Header extends React.Component {
                                     <a href="#/sort/127">教程演示</a>
                                 </div>
                             </li>
-                        </ul>
 
-                        <div class="header-search floatright">
-                            <form action="#" id="search_form" method="post">
-                                <input name="keyword" id="search_content" placeholder="这里搜索" />
-                                <input type="submit" value="搜 索" title="搜索" class="btn-search" />
-                            </form>
-                        </div>
+                            <div class="header-search floatright">
+                                <form id="search_form" onSubmit={this.seatch}>
+                                    <input name="keyword" id="search_content" placeholder="这里搜索" />
+                                    <input type="submit" value="搜 索" title="搜索" class="btn-search" />
+                                </form>
+                            </div>
+                        </ul>
                     </div>
                 </div>
             </div>);
