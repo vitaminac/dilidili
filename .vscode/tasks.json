@@ -4,9 +4,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "react-server",
+            "label": "debug",
             "type": "shell",
-            "command": "npm start --prefix frontend"
+            "command": "./debug"
         }
     ]
 }
