@@ -7,7 +7,7 @@ export class Header extends React.Component {
         // TODO
         e.preventDefault();
         var content = $("#search_form").children('#search_content').val();
-        window.location = "#/search/" + content
+        window.location = "/search/" + content
     }
 
     render() {

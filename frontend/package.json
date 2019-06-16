@@ -3,12 +3,14 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "//": "jquery plugin TODO",
-        "jquery": "^3.4.1",
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
         "react-router-dom": "^5.0.1",
-        "react-scripts": "3.0.1"
+        "react-scripts": "3.0.1",
+        "//": "TODO: remove reqwest",
+        "reqwest": "^2.0.5",
+        "//": "TODO: remove jquery",
+        "jquery": "^3.4.1"
     },
     "scripts": {
         "start": "react-scripts start",

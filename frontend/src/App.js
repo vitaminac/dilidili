@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { TITLE, BANNER } from './config';
+import { TITLE, BANNER } from './Config';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import IndexPage from './page/IndexPage';
@@ -29,9 +29,11 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
-                <div class="main-header-image" style={{ "background-image": `url('${BANNER}')` }}></div>
+                <div className="main-header-image" style={{ backgroundImage: `url('${BANNER}')` }}></div>
                 <Header banner={BANNER} />
-                <IndexPage />
+                <div id="main-container" className="concat">
+                    {this.props.children || <IndexPage />}
+                </div>
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
                     <p>Edit <code>src/App.js</code> and save to reload.</p>
