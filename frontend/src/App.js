@@ -4,6 +4,8 @@ import './App.css';
 import { TITLE, BANNER } from './config';
 import { Header } from './Header';
 import { Footer } from './Footer';
+import IndexPage from './page/IndexPage';
+
 import $ from 'jquery';
 window.$ = $;
 
@@ -29,6 +31,7 @@ class App extends React.Component {
             <div className="App">
                 <div class="main-header-image" style={{ "background-image": `url('${BANNER}')` }}></div>
                 <Header banner={BANNER} />
+                <IndexPage />
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
                     <p>Edit <code>src/App.js</code> and save to reload.</p>
