@@ -24,6 +24,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
+                <div class="main-header-image" style={{ "background-image": `url('${BANNER}')` }}></div>
                 <Header banner={BANNER} />
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
