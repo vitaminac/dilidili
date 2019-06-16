@@ -68,10 +68,5 @@ def createApp(config, modules=None, package=None, log=True, template_folder='./t
         print("closing")
 
     atexit.register(beforeCloseHandler)
-
-    with app.app_context():
-        # Extensions like Flask-SQLAlchemy now know what the "current" app
-        # is while within this block. Therefore, you can now run........
-        db.create_all()
-
+    
     return app

@@ -1,7 +1,7 @@
 import functools
 from flask import g, redirect, url_for, flash, request, Blueprint
 from app import db
-from .models import User
+from .models import Uploader
 
 users = Blueprint('users', __name__, url_prefix='/users')
 
@@ -35,14 +35,14 @@ def register():
         elif not user.password:
             error = "Password is required."
         elif db.session.query(
-            User.query.filter_by(username=user.username).exists()
+            Uploader.query.filter_by(username=user.username).exists()
         ).scalar():
             error = f"User {username} is already registered."
 
         if error is None:
             # the name is available, create the user and go to the login page
             db.session.add(
-                User(username=user.username, password=user.password))
+                Uploader(username=user.username, password=user.password))
             db.session.commit()
             return redirect(url_for("auth.login"))
 

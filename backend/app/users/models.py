@@ -4,7 +4,7 @@ from werkzeug.security import generate_password_hash
 from app import db
 
 
-class User(db.Model):
+class Uploader(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String, unique=True, nullable=False)
     _password = db.Column("password", db.String, nullable=False)
