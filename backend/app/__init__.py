@@ -1,38 +1,10 @@
-import click
+
 from flask import Flask  # Import the Flask class
-from flask.cli import with_appcontext
 from flask_sqlalchemy import SQLAlchemy
 
+from .command import init_db_command
 
-app = Flask(__name__)    # Create an instance of the class for our use
 db = SQLAlchemy()
-
-
-def init_db():
-    db.drop_all()
-    db.create_all()
-
-
-def insert_data():
-    if app.config['DEBUG']:
-        from app.users.models import Uploader
-        from app.videos.models import Video
-        with app.app_context():
-            uploader = Uploader(username='Uploader', password='1234')
-            db.session.add(uploader)
-            video = Video(uploader_id=uploader.id, title="关于我转生变成史莱姆这件事")
-            db.session.add(video)
-            db.session.commit()
-
-
-@click.command("init-db")
-@with_appcontext
-# Extensions like Flask-SQLAlchemy now know what the "current" app
-# is while within this block. Therefore, you can now run........
-def init_db_command():
-    """Clear existing data and create new tables."""
-    init_db()
-    click.echo("Initialized the database.")
 
 
 def create_app(config):
