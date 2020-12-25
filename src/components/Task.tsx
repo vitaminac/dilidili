@@ -1,16 +1,8 @@
 import React, { FunctionComponent } from "react";
+import TaskModel from "./TaskModel";
 
 export type Props = {
-  /** Composition of the task */
-  readonly task: {
-    /** Id of the task */
-    readonly id: string;
-    /** Title of the task */
-    readonly title: string;
-    /** Current state of the task */
-    readonly state: string;
-    readonly updatedAt?: Date;
-  };
+  readonly task: TaskModel;
   /** Event to change the task to archived */
   readonly onArchiveTask?: (id: string) => void;
   /** Event to change the task to pinned */
