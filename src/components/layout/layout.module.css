@@ -1,0 +1,20 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.header {
+  margin: 0 0;
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+.footer {
+  margin: 0 0;
+  flex-shrink: 0;
+}
