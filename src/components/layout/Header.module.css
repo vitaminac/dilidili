@@ -1,0 +1,13 @@
+.bg {
+  background-image: url(./bg.png);
+  height: 180px;
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat no-repeat;
+  background-size: cover;
+}
+
+.sticky {
+  position: fixed;
+  top: 0px;
+}

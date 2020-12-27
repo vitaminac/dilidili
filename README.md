@@ -29,6 +29,13 @@ Builds the app for production to the `build` folder.
 
     npm run build
 
+## ToDo
+
+- remove reqwest dependencies.
+- remove jquery dependencies.
+- remove slider.js, slider.css, main.css.
+- remove inline code ToDo
+
 ## Tutorial
 
 - [ ] https://create-react-app.dev/docs/developing-components-in-isolation
