@@ -1,10 +1,9 @@
 import React, { FunctionComponent } from "react";
-import TaskModel from "./TaskModel";
+import { Task as TaskModel, TaskState } from "../shapes";
 import Task from "./Task";
 
 export type Props = {
-  readonly loading: boolean;
-  tasks: TaskModel[];
+  readonly tasks?: TaskModel[];
   /** Event to change the task to archived */
   readonly onArchiveTask?: (id: string) => void;
   /** Event to change the task to pinned */
@@ -13,8 +12,9 @@ export type Props = {
 
 function sortTask(tasks: TaskModel[]): TaskModel[] {
   return [
-    ...tasks.filter((t) => t.state === "TASK_PINNED"),
-    ...tasks.filter((t) => t.state !== "TASK_PINNED"),
+    ...tasks.filter((t) => t.state === TaskState.TASK_PINNED),
+    ...tasks.filter((t) => t.state === TaskState.TASK_INBOX),
+    ...tasks.filter((t) => t.state === TaskState.TASK_ARCHIVED),
   ];
 }
 
@@ -33,7 +33,7 @@ const TaskList: FunctionComponent<Props> = (props: Props) => {
     onArchiveTask: props.onArchiveTask,
   };
 
-  if (props.loading) {
+  if (props.tasks === undefined) {
     return (
       <div className="list-items">
         {LoadingRow}

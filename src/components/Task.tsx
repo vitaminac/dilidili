@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from "react";
-import TaskModel from "./TaskModel";
+import { Task as TaskModel, TaskState } from "../shapes";
+import style from "./Task.module.css";
 
 export type Props = {
   readonly task: TaskModel;
@@ -10,21 +11,26 @@ export type Props = {
 };
 
 const Task: FunctionComponent<Props> = (props: Props) => (
-  <div className={`list-item ${props.task.state}`}>
+  <div className="list-item">
     <label className="checkbox">
       <input
         type="checkbox"
-        defaultChecked={props.task.state === "TASK_ARCHIVED"}
+        defaultChecked={props.task.state === TaskState.TASK_ARCHIVED}
         disabled={true}
         name="checked"
       />
       <span
-        className="checkbox-custom"
+        className={`${style.checkbox} ${
+          props.task.state === TaskState.TASK_ARCHIVED ? style.checked : ""
+        }`}
         onClick={() => props.onArchiveTask?.(props.task.id)}
       />
     </label>
     <div className="title">
       <input
+        className={`${
+          props.task.state === TaskState.TASK_ARCHIVED ? style.archived : ""
+        }`}
         type="text"
         value={props.task.title}
         readOnly={true}
@@ -33,10 +39,14 @@ const Task: FunctionComponent<Props> = (props: Props) => (
     </div>
 
     <div className="actions" onClick={(event) => event.stopPropagation()}>
-      {props.task.state !== "TASK_ARCHIVED" && (
+      {props.task.state !== TaskState.TASK_ARCHIVED && (
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
         <a onClick={() => props?.onPinTask?.(props.task.id)}>
-          <span className={`icon-star`} />
+          <span
+            className={`icon-star ${
+              props.task.state === TaskState.TASK_PINNED ? style.pinned : ""
+            }`}
+          />
         </a>
       )}
     </div>

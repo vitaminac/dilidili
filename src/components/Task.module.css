@@ -1,0 +1,40 @@
+.pinned {
+  color: #2cc5d2;
+}
+
+.archived {
+  color: #aaa !important;
+}
+
+.checkbox:before {
+  position: absolute;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  width: 0.85em;
+  height: 0.85em;
+  transform: translate3d(-50%, -50%, 0);
+  background: transparent;
+  box-shadow: #2cc5d2 0 0 0 1px inset;
+  content: "";
+  display: block;
+}
+
+.checked::before {
+  font-size: 16px;
+  line-height: 24px;
+  box-shadow: none;
+  color: #2cc5d2;
+  margin-top: -1px;
+  font-family: "percolate";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e65e";
+}

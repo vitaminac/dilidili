@@ -1,6 +1,6 @@
 import { Props } from "./TaskList";
-import TaskModel from "./TaskModel";
-import { DefaultTask, PinTask } from "./Task.stories.examples";
+import { Task as TaskModel } from "../shapes";
+import { DefaultTask, PinTask, ArchivedTask } from "./Task.stories.examples";
 
 export const DefaultTaskList: TaskModel[] = [
   { ...DefaultTask, id: "1", title: "Task 1" },
@@ -11,7 +11,6 @@ export const DefaultTaskList: TaskModel[] = [
   { ...DefaultTask, id: "6", title: "Task 6" },
 ];
 export const DefaultTaskListProps: Props = {
-  loading: false,
   tasks: DefaultTaskList,
 };
 
@@ -20,16 +19,22 @@ export const WithPinnedTask: TaskModel[] = [
   { ...PinTask, id: "6", title: "Task 6 (pinned)" },
 ];
 export const WithPinnedTaskProps: Props = {
-  loading: false,
   tasks: WithPinnedTask,
 };
 
-export const EmptyTaskList: TaskModel[] = [];
-export const LoadingTaskListProps: Props = {
-  loading: true,
-  tasks: EmptyTaskList,
+export const WithArchivedTask: TaskModel[] = [
+  { ...ArchivedTask, id: "0", title: "Task 0 (archived)" },
+  ...DefaultTaskList.slice(0, 5),
+];
+export const WithArchivedTaskProps: Props = {
+  tasks: WithArchivedTask,
 };
+
+export const LoadingTaskListProps: Props = {
+  tasks: undefined,
+};
+
+export const EmptyTaskList: TaskModel[] = [];
 export const EmptyTaskListProps: Props = {
   tasks: EmptyTaskList,
-  loading: false,
 };

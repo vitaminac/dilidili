@@ -4,6 +4,7 @@ import TaskList, { Props } from "./TaskList";
 import {
   DefaultTaskListProps,
   WithPinnedTaskProps,
+  WithArchivedTaskProps,
   LoadingTaskListProps,
   EmptyTaskListProps,
 } from "./TaskList.stories.examples";
@@ -21,6 +22,9 @@ Default.args = DefaultTaskListProps;
 
 export const WithPinnedTask = Template.bind({});
 WithPinnedTask.args = WithPinnedTaskProps;
+
+export const WithArchivedTask = Template.bind({});
+WithArchivedTask.args = WithArchivedTaskProps;
 
 export const Loading = Template.bind({});
 Loading.args = LoadingTaskListProps;
