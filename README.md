@@ -35,6 +35,7 @@ Builds the app for production to the `build` folder.
 - remove jquery dependencies.
 - remove slider.js, slider.css, main.css.
 - remove inline code ToDo
+- remove # in the url
 
 ## Tutorial
 
