@@ -1,10 +1,9 @@
-var CommentObject = require('./CommentObject');
+import CommentObject from "./CommentObject";
 
-
-class StaticComment extends CommentObject {
+export default class StaticComment extends CommentObject {
   constructor(manager, init) {
     super(manager, init);
-    this.align = (this.mode == 4) ? 3 : 0;
+    this.align = this.mode == 4 ? 3 : 0;
   }
 
   _findOffsetY(index, channel, offset) {
@@ -25,7 +24,7 @@ class StaticComment extends CommentObject {
       return preY;
     }
     return -1;
-  };
+  }
 
   layout() {
     var index = 0;
@@ -40,11 +39,10 @@ class StaticComment extends CommentObject {
     }
 
     this.index = index - 1;
-    this.offsetX(this.manager.stage.offsetLeft + (this.manager.stage.offsetWidth - this.Width()) / 2);
+    this.offsetX(
+      this.manager.stage.offsetLeft +
+        (this.manager.stage.offsetWidth - this.Width()) / 2
+    );
     this.offsetY(insertY);
-  };
+  }
 }
-
-
-module.exports = StaticComment;
-

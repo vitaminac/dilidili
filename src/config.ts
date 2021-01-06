@@ -1,11 +1,11 @@
-export const API_BASE_URL = "/api";
-
+export const FRONTEND_BASE_PATH = "/dilidili";
 export const ROUTES = {
   VIDEO: "/view",
   BANGUMI: "/bangumi",
   SEARCH: "/search",
 };
 
+export const API_BASE_URL = "/api";
 export const BACKEND_API = {
   BANNER: "/banner",
   INDEX_RANK: "/top/",

@@ -1,0 +1,16 @@
+src/components/AllRank.js
+src/components/BangumiInfo.js
+src/components/IndexHot.js
+src/components/SearchContent.js
+src/components/SortHot.js
+src/components/SortRank.js
+src/components/Video.js
+src/components/VideojsHotKeys.js
+src/components/IndexBanner.js
+src/components/BangumiIndex.js
+src/components/BangumiList.js
+src/containers/BangumiInfoPage.js
+src/danmaku/CommentManager.js
+src/danmaku/ScrollComment.js
+src/danmaku/StaticComment.js
+src/danmaku/VideojsPlugin.js

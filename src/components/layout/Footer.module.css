@@ -1,0 +1,15 @@
+.aboutLinks > a, span {
+  margin: 3px 0;
+  display: block;
+  color: #222;
+  line-height: 22px;
+  font-size: 13px;
+}
+
+.aboutLinks > a:hover {
+  color: #00a1d6;
+}
+
+.aboutLinks {
+  margin-top: 20px;
+}

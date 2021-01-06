@@ -1,7 +1,6 @@
-var React = require("react");
-
-var SortRank = require("../components/SortRank");
-var SortHot = require("../components/SortHot");
+import React from "react";
+import SortRank from "../components/SortRank";
+import SortHot from "../components/SortHot";
 
 function titleCallback(content) {
   document.title = "BH5 | 分类:" + content;

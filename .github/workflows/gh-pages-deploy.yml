@@ -1,0 +1,35 @@
+name: gh-pages-deploy
+on: 
+  push:
+    branches:
+      - develop
+jobs:
+  gh-pages-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Caching dependencies to speed up workflows. (GitHub will remove any cache entries that have not been accessed in over 7 days.)
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Setup for Github page deploy access
+        uses: webfactory/ssh-agent@v0.4.1
+        with:
+          ssh-private-key: ${{ secrets.SSH_KEY }}
+      - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+      - name: Deploy
+        run: |
+          npm run build
+          cd build
+          git init -b build
+          git add .
+          git -c user.name='dalao' -c user.email=dalao1002@gmail.com commit -m "build"
+          git remote add origin git@github.com:vitaminac/dilidili.git
+          git push -f origin build

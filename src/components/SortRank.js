@@ -1,9 +1,9 @@
 import $ from "jquery";
-var React = require("react");
-var reqwest = require("reqwest");
-var Config = require("../config");
-var Pager = require("./Pager");
-var Loading = require("./Loading");
+import React from "react";
+import reqwest from "reqwest";
+import * as Config from "../config";
+import Pager from "./Pager";
+import Loading from "./Loading";
 
 class VideoItem extends React.Component {
   render() {
@@ -113,8 +113,8 @@ export default class SortRank extends React.Component {
 
     reqwest({
       url:
-        Config.base_url +
-        Config.routes.SORT_VIDEOS +
+        Config.API_BASE_URL +
+        Config.BACKEND_API.SORT_VIDEOS +
         tid +
         "?page=" +
         _this._page +

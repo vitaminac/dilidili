@@ -1,10 +1,8 @@
-var React = require("react");
-var reqwest = require("reqwest");
-
-var Config = require("../config");
-var Loading = require("./Loading");
-
-var videojs = require("video.js");
+import React from "react";
+import videojs from "video.js";
+import reqwest from "reqwest";
+import * as Config from "../config";
+import Loading from "./Loading";
 
 require("../danmaku/VideojsPlugin");
 require("./VideojsHotKeys");
@@ -119,8 +117,8 @@ export default class Player extends React.Component {
       var _this = this;
       reqwest({
         url:
-          Config.base_url +
-          Config.routes.VIDEO_URL +
+          Config.API_BASE_URL +
+          Config.BACKEND_API.VIDEO_URL +
           this._cid +
           "?quality=" +
           this._quality,
@@ -169,7 +167,7 @@ export default class Player extends React.Component {
       display = "block";
     }
 
-    var commentUrl = Config.routes.GET_COMMENT + this._cid + ".xml";
+    var commentUrl = Config.BACKEND_API.GET_COMMENT + this._cid + ".xml";
 
     return (
       <div className="area area-player">

@@ -1,5 +1,4 @@
-class CommentObject {
-
+export default class CommentObject {
   constructor(manager, init) {
     this.align = 0;
     this.index = 0;
@@ -49,7 +48,11 @@ class CommentObject {
         if (this.align % 2 === 0) {
           this._x = this.dom.offsetLeft - this.manager.stage.offsetLeft;
         } else {
-          this._x = this.manager.stage.offsetWidth - (this.dom.offsetLeft - this.manager.stage.offsetLeft + this.dom.offsetWidth);
+          this._x =
+            this.manager.stage.offsetWidth -
+            (this.dom.offsetLeft -
+              this.manager.stage.offsetLeft +
+              this.dom.offsetWidth);
         }
       }
       return this._x;
@@ -61,8 +64,7 @@ class CommentObject {
         this.dom.style.left = this._x + "px";
       }
     }
-  };
-
+  }
 
   offsetY(y) {
     if (y === null || y === undefined) {
@@ -70,7 +72,9 @@ class CommentObject {
         if (this.align < 2) {
           this._y = this.dom.offsetTop;
         } else {
-          this._y = this.manager.stage.offsetHeight - (this.dom.offsetTop + this.dom.offsetHeight);
+          this._y =
+            this.manager.stage.offsetHeight -
+            (this.dom.offsetTop + this.dom.offsetHeight);
         }
       }
       return this._y;
@@ -79,11 +83,11 @@ class CommentObject {
       if (this.align < 2) {
         this.dom.style.top = this._y + "px";
       } else {
-        this.dom.style.top = (this.manager.stage.offsetHeight - y - this.dom.offsetHeight) + "px";
+        this.dom.style.top =
+          this.manager.stage.offsetHeight - y - this.dom.offsetHeight + "px";
       }
     }
-  };
-
+  }
 
   Color(c) {
     if (c === null || c === undefined) {
@@ -91,17 +95,19 @@ class CommentObject {
     } else {
       this._color = c;
       var color = c.toString(16);
-      color = color.length >= 6 ? color : new Array(6 - color.length + 1).join("0") + color;
-      if (color.indexOf('#') !== 0) {
-        color = '#'.concat(color);
+      color =
+        color.length >= 6
+          ? color
+          : new Array(6 - color.length + 1).join("0") + color;
+      if (color.indexOf("#") !== 0) {
+        color = "#".concat(color);
       }
       this.dom.style.color = color;
       if (this._color === 0) {
         this.dom.className = this.manager.options.className + " rshadow";
       }
     }
-  };
-
+  }
 
   Width(w) {
     if (w === null || w === undefined) {
@@ -113,8 +119,7 @@ class CommentObject {
       this._width = w;
       this.dom.style.width = this._width + "px";
     }
-  };
-
+  }
 
   Height(h) {
     if (h === null || h === undefined) {
@@ -126,8 +131,7 @@ class CommentObject {
       this._height = h;
       this.dom.style.height = this._height + "px";
     }
-  };
-
+  }
 
   Size(s) {
     if (s === null || s === undefined) {
@@ -136,8 +140,7 @@ class CommentObject {
       this._size = s;
       this.dom.style.fontSize = this._size + "px";
     }
-  };
-
+  }
 
   Border(b) {
     if (b === null || b === undefined) {
@@ -146,8 +149,7 @@ class CommentObject {
       this._border = b;
       this.dom.style.border = b;
     }
-  };
-
+  }
 
   init() {
     var dom = document.createElement("div");
@@ -166,24 +168,15 @@ class CommentObject {
 
     this.Color(this._color);
     this.Size(this._size);
-  };
+  }
 
   checkTime(nowTime) {
-    return (this.stime + this.lifeTime) >= nowTime;
-  };
+    return this.stime + this.lifeTime >= nowTime;
+  }
 
+  layout() {}
 
-  layout() {
-  };
+  stop() {}
 
-
-  stop() {
-  };
-
-  start() {
-  };
-
+  start() {}
 }
-
-
-module.exports = CommentObject;

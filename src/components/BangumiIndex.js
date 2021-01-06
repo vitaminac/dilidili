@@ -93,7 +93,7 @@ export default class BangumiIndex extends React.Component {
   _loadData() {
     var _this = this;
     reqwest({
-      url: Config.API_BASE_URL + Config.ROUTES.BANGUMI_INDEX,
+      url: Config.API_BASE_URL + Config.BACKEND_API.BANGUMI_INDEX,
       type: "json",
       method: "get",
       data: {},

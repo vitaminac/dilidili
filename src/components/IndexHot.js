@@ -1,7 +1,7 @@
 import { ROUTES } from "../config";
-var React = require("react");
-var Config = require("../config");
-var reqwest = require("reqwest");
+import React from "react";
+import * as Config from "../config";
+import reqwest from "reqwest";
 
 class VideoItem extends React.Component {
   render() {
@@ -47,7 +47,7 @@ export default class IndexHot extends React.Component {
   _loadData() {
     var _this = this;
     reqwest({
-      url: Config.API_BASE_URL + Config.ROUTES.TOP_RANK,
+      url: Config.API_BASE_URL + Config.BACKEND_API.TOP_RANK,
       type: "json",
       method: "get",
       crossOrigin: true,

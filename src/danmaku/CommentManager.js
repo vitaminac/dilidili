@@ -1,8 +1,7 @@
-var StaticComment = require('./StaticComment');
-var ScrollComment = require('./ScrollComment');
+import StaticComment from "./StaticComment";
+import ScrollComment from "./ScrollComment";
 
-
-class CommentManager {
+export default class CommentManager {
   constructor(stage) {
     this.commentLine = [];
     this.nowLine = [];
@@ -13,13 +12,13 @@ class CommentManager {
       margin: 1,
       global: {
         opacity: 1,
-        scale: 1
+        scale: 1,
       },
       scroll: {
         opacity: 1,
-        scale: 1
+        scale: 1,
       },
-      limit: 0
+      limit: 0,
     };
     this.stage = stage;
     this.width = stage.offsetWidth;
@@ -62,7 +61,10 @@ class CommentManager {
     var insertIndex = 0;
     while (low < high) {
       i = Math.floor((high + low + 1) / 2);
-      if (this.nowLine[i - 1].offsetY() <= pushCmt.offsetY() && this.nowLine[i].offsetY() >= pushCmt.offsetY()) {
+      if (
+        this.nowLine[i - 1].offsetY() <= pushCmt.offsetY() &&
+        this.nowLine[i].offsetY() >= pushCmt.offsetY()
+      ) {
         insertIndex = i;
         break;
       }
@@ -85,13 +87,12 @@ class CommentManager {
   setBounds() {
     this.width = this.stage.offsetWidth;
     this.height = this.stage.offsetHeight;
-  };
+  }
 
   init() {
     this.setBounds();
     this.position = 0;
-  };
-
+  }
 
   //插入弹幕
   send(data) {
@@ -101,19 +102,19 @@ class CommentManager {
     } else if (data.mode === 1 || data.mode === 2 || data.mode == 6) {
       cmt = new ScrollComment(this, data);
     } else {
-      console.log('不支持的弹幕');
+      console.log("不支持的弹幕");
       return;
     }
     cmt.init();
     this.stage.appendChild(cmt.dom);
     cmt.layout();
     this.nowLinePush(cmt);
-  };
+  }
 
   seek(locateTime) {
     this.position = 0;
     this.position = this.locate(locateTime);
-  };
+  }
 
   locate(time) {
     for (var i = this.position; i < this.commentLine.length; i++) {
@@ -123,10 +124,13 @@ class CommentManager {
       }
     }
     return this.commentLine.length;
-  };
+  }
 
   time(nowTime) {
-    if (this.nowLine.length === 0 && this.position === this.commentLine.length) {
+    if (
+      this.nowLine.length === 0 &&
+      this.position === this.commentLine.length
+    ) {
       return;
     }
 
@@ -149,7 +153,7 @@ class CommentManager {
         length--;
       }
     }
-  };
+  }
 
   load(timeLine) {
     this.commentLine = timeLine;
@@ -161,18 +165,16 @@ class CommentManager {
         return -1;
       }
     });
-  };
+  }
 
   remove(rmObj) {
     this.nowLineRemove(rmObj);
     this.stage.removeChild(rmObj.dom);
-  };
+  }
 
   clear() {
     while (this.nowLine.length > 0) {
       this.remove(this.nowLine[0]);
     }
-  };
+  }
 }
-
-module.exports = CommentManager;

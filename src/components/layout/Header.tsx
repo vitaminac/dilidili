@@ -26,7 +26,7 @@ export default function Header() {
     return () => {
       window.removeEventListener("scroll", callback);
     };
-  }, []);
+  }, [handleScroll]);
 
   return (
     <div id="main-header">

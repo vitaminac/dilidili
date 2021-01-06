@@ -4,14 +4,24 @@ import reqwest from "reqwest";
 
 class VideoItem extends React.Component {
   render() {
-    var linkUrl = Config.ROUTES.videos + "/" + this.props.data.param;
+    var linkUrl = Config.ROUTES.VIDEO + "/" + this.props.data.param;
     return (
       <div className="video-block floatleft">
-        <a href={linkUrl} target="_blank" className="video-block-main">
-          <img src={this.props.data.cover} />
+        <a
+          href={linkUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="video-block-main"
+        >
+          <img src={this.props.data.cover} alt="cover" />
         </a>
         <div className="video-block-time">弹幕: {this.props.data.danmaku}</div>
-        <a href={linkUrl} target="_blank" className="video-block-info">
+        <a
+          href={linkUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="video-block-info"
+        >
           {this.props.data.title}
         </a>
         <div className="video-block-info-hidden">
@@ -48,7 +58,7 @@ class VideoBlock extends React.Component {
     var labelName = Config.sort_tags[tid];
 
     reqwest({
-      url: Config.API_BASE_URL + Config.ROUTES.INDEX_RANK + tid,
+      url: Config.API_BASE_URL + Config.BACKEND_API.INDEX_RANK + tid,
       type: "json",
       method: "get",
       crossOrigin: true,
@@ -76,7 +86,7 @@ class VideoBlock extends React.Component {
     var renderVideos = [];
     for (var i in this.state.videoList) {
       renderVideos.push(<VideoItem key={i} data={this.state.videoList[i]} />);
-      if (i == 9) {
+      if (i === 9) {
         break;
       }
     }

@@ -37,6 +37,10 @@ Builds the app for production to the `build` folder.
 - remove inline code ToDo
 - remove # in the url
 
+## Best Practices
+
+* Gitflow
+
 ## Tutorial
 
 - [ ] https://create-react-app.dev/docs/developing-components-in-isolation

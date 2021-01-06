@@ -1,6 +1,6 @@
-var CommentObject = require('./CommentObject');
+import CommentObject from "./CommentObject";
 
-class ScrollComment extends CommentObject {
+export default class ScrollComment extends CommentObject {
   constructor(manager, init) {
     super(manager, init);
     switch (this.mode) {
@@ -43,7 +43,7 @@ class ScrollComment extends CommentObject {
     this.dom.style.left = "-" + width + "px";
 
     this.moveAnimation();
-  };
+  }
 
   _findOffsetY(index, channel, offset) {
     var cmObj;
@@ -54,7 +54,7 @@ class ScrollComment extends CommentObject {
         if (cmObj.offsetY() - preY >= channel) {
           return preY;
         }
-        if ((!cmObj.follow) && (cmObj.timeLeft <= (cmObj.lifeTime * 0.5))) {
+        if (!cmObj.follow && cmObj.timeLeft <= cmObj.lifeTime * 0.5) {
           cmObj.follow = true;
           return cmObj.offsetY();
         }
@@ -65,15 +65,14 @@ class ScrollComment extends CommentObject {
       return preY;
     }
     return -1;
-  };
-
+  }
 
   transform(trans) {
     this.dom.style.transform = trans;
     this.dom.style["webkitTransform"] = trans;
     this.dom.style["msTransform"] = trans;
     this.dom.style["oTransform"] = trans;
-  };
+  }
 
   moveTransform() {
     if (!this.moving) {
@@ -82,31 +81,26 @@ class ScrollComment extends CommentObject {
       this.dom.style.transition = "transform " + this.lifeTime + "ms linear";
       this.moving = true;
     }
-  };
+  }
 
   moveAnimation() {
-    var locate = this.align % 2 == 0 ? '-left ' : '-right ';
+    var locate = this.align % 2 == 0 ? "-left " : "-right ";
     var animation = "cmt-move" + locate + this.lifeTime / 1000 + "s linear";
     this.dom.style.animation = animation;
     this.dom.style["-webkit-animation"] = animation;
     this.dom.style["-moz-animation"] = animation;
     this.dom.style["-o-animation"] = animation;
-  };
+  }
 
   start() {
     this.dom.style["animation-play-state"] = "running";
-  };
+  }
 
   stop() {
     this.dom.style["animation-play-state"] = "paused";
-  };
-
+  }
 
   checkTime(nowTime) {
     return this.stime + this.lifeTime + this.timeOffset >= nowTime;
-  };
-
+  }
 }
-
-module.exports = ScrollComment;
-

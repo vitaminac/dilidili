@@ -5,12 +5,13 @@ import { BrowserRouter as Router } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 import { store } from "./store";
+import { FRONTEND_BASE_PATH } from "./config";
 import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
+      <Router basename={FRONTEND_BASE_PATH}>
         <App />
       </Router>
     </Provider>

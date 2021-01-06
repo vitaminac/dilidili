@@ -1,9 +1,9 @@
 import $ from "jquery";
-var React = require("react");
-var Config = require("../config");
-var reqwest = require("reqwest");
+import React from "react";
+import * as Config from "../config";
+import reqwest from "reqwest";
 
-var Loading = require("./Loading");
+import Loading from "./Loading";
 
 class BangumiItem extends React.Component {
   getDefaultProps() {
@@ -47,7 +47,7 @@ export default class BangumiList extends React.Component {
   _loadData() {
     var _this = this;
     reqwest({
-      url: Config.base_url + Config.routes.BANGUMI_LIST,
+      url: Config.API_BASE_URL + Config.BACKEND_API.BANGUMI_LIST,
       type: "json",
       method: "get",
       data: {},

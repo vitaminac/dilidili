@@ -1,7 +1,7 @@
-var React = require("react");
-var Config = require("../config");
-var reqwest = require("reqwest");
-var Loading = require("./Loading");
+import React from "react";
+import * as Config from "../config";
+import reqwest from "reqwest";
+import Loading from "./Loading";
 
 class BangumiItem extends React.Component {
   render() {
@@ -53,7 +53,8 @@ export default class BangumiInfo extends React.Component {
   _loadData() {
     var _this = this;
     reqwest({
-      url: Config.base_url + Config.routes.BANGUMI_INFO + _this._seasonId,
+      url:
+        Config.API_BASE_URL + Config.BACKEND_API.BANGUMI_INFO + _this._seasonId,
       type: "json",
       method: "get",
       data: {},

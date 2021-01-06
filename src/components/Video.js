@@ -1,10 +1,10 @@
-var React = require("react");
-var reqwest = require("reqwest");
+import React from "react";
+import reqwest from "reqwest";
 var _ = require("lodash");
 
-var Config = require("../config");
+import * as Config from "../config";
 var Player = require("./Player");
-var Loading = require("./Loading");
+import Loading from "./Loading";
 class Tags extends React.Component {
   render() {
     var tags = _.split(this.props.str, ",");
@@ -139,7 +139,8 @@ export default class Video extends React.Component {
     if (this.props.aid !== null) {
       var _this = this;
       reqwest({
-        url: Config.base_url + Config.routes.VIDEO_INFO + this.props.aid,
+        url:
+          Config.API_BASE_URL + Config.BACKEND_API.VIDEO_INFO + this.props.aid,
         type: "json",
         method: "get",
         crossOrigin: true,

@@ -1,5 +1,5 @@
-var React = require("react");
-var BangumiInfo = require("../components/BangumiInfo");
+import React from "react";
+import BangumiInfo from "../components/BangumiInfo";
 
 function titleCallback(content) {
   document.title = "BH5 | 番剧:" + content;
