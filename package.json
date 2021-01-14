@@ -30,7 +30,8 @@
     "@types/react-dom": "^17.0.0",
     "@types/react-redux": "^7.1.14",
     "@types/react-router-dom": "^5.1.6",
-    "husky": "^4.3.6",
+    "husky": "^4.3.7",
+    "jest-coverage-badges": "^1.1.2",
     "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
     "react-scripts": "4.0.1",
@@ -41,6 +42,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "coverage": "npm test -- --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
@@ -56,7 +58,20 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && npm run coverage && npx jest-coverage-badges && git add ./coverage/*.svg"
+    }
+  },
+  "jest": {
+    "coverageReporters": [
+      "json-summary"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 10,
+        "branches": 4,
+        "functions": 9,
+        "lines": 10
+      }
     }
   },
   "lint-staged": {

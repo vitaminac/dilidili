@@ -1,4 +1,10 @@
-# React App
+# dilidili React App
+
+[![License](https://img.shields.io/npm/l/make-coverage-badge.svg)](https://opensource.org/licenses/MIT)
+![Coverage Lines](./coverage/badge-lines.svg)
+![Coverage Functions](./coverage/badge-functions.svg)
+![Coverage Branches](./coverage/badge-branches.svg)
+![Coverage Statements](./coverage/badge-statements.svg)
 
 ## Introduction
 
@@ -27,7 +33,7 @@ Launches the test runner(Jest) in the interactive watch mode.
 
 Coverage Reporting
 
-    npm test -- --coverage --watchAll=false
+    npm run coverage
 
 Update Snapshot
 
@@ -44,6 +50,7 @@ Builds the app for production to the `build` folder.
 - remove slider.js, slider.css, main.css.
 - remove inline code ToDo
 - remove # in the url
+- increase coverage percentage to 95%
 
 ## Best Practices
 

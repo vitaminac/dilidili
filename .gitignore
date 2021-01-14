@@ -6,7 +6,9 @@
 .pnp.js
 
 # testing
-/coverage
+**/coverage/*
+# badges
+!**/coverage/*.svg
 
 # production
 /build
