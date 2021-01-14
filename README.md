@@ -23,7 +23,15 @@ Start the storybook component explorer on port 6006
 
 Launches the test runner(Jest) in the interactive watch mode.
 
-    npm test
+    npm test -- --watchAll=false
+
+Coverage Reporting
+
+    npm test -- --coverage --watchAll=false
+
+Update Snapshot
+
+    npm test -- -u --watchAll=false
 
 Builds the app for production to the `build` folder.
 
