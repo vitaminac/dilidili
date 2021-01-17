@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Task, TaskState } from "./shapes";
+import { Task, TaskState, VideoDetail } from "./shapes";
+
 function changeTaskState(taskState: TaskState) {
   return (tasks: Task[], taskId: string): Task[] => {
     return tasks.map((task) =>
@@ -22,6 +23,26 @@ export const tasksSlice = createSlice({
   },
 });
 
+export const videosSlice = createSlice({
+  name: "videos",
+  initialState: {} as Record<number, VideoDetail>,
+  reducers: {
+    mergeVideos(
+      videos: Record<number, VideoDetail>,
+      action: PayloadAction<VideoDetail[]>
+    ) {
+      return {
+        ...videos,
+        ...action.payload.reduce(
+          (obj, item) => Object.assign(obj, { [item.videoId]: item }),
+          {}
+        ),
+      };
+    },
+  },
+});
+
 export default combineReducers({
   tasks: tasksSlice.reducer,
+  videos: videosSlice.reducer,
 });

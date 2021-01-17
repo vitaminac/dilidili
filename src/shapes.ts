@@ -14,6 +14,15 @@ export interface Task {
   readonly updatedAt?: Date;
 }
 
+export interface VideoDetail {
+  title: string;
+  cover: string;
+  uploader: string;
+  playCount: number;
+  videoId: number;
+}
+
 export interface ReduxStoreTree {
   tasks: Task[];
+  videos: Record<number, VideoDetail>;
 }

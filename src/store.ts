@@ -6,6 +6,7 @@ const preloadedState: ReduxStoreTree =
   process.env.NODE_ENV === "production"
     ? {
         tasks: [],
+        videos: {},
       }
     : {
         tasks: [
@@ -14,6 +15,7 @@ const preloadedState: ReduxStoreTree =
           { id: "3", title: "Task 3", state: TaskState.TASK_ARCHIVED },
           { id: "4", title: "Task 4", state: TaskState.TASK_INBOX },
         ],
+        videos: {},
       };
 
 export const store = configureStore({

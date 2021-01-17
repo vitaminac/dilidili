@@ -1,6 +1,6 @@
 import React from "react";
 import IndexBanner from "../components/IndexBanner";
-import IndexHot from "../components/IndexHot";
+import { IndexHot } from "./ReduxConnectedContainer";
 import AllRank from "../components/AllRank";
 
 export default class IndexPage extends React.Component {
