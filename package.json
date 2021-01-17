@@ -25,6 +25,7 @@
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
     "@types/jest": "^26.0.19",
+    "@types/jquery": "^3.5.5",
     "@types/node": "^14.14.16",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
@@ -63,14 +64,15 @@
   },
   "jest": {
     "coverageReporters": [
+      "text",
       "json-summary"
     ],
     "coverageThreshold": {
       "global": {
-        "statements": 10,
-        "branches": 4,
-        "functions": 9,
-        "lines": 10
+        "statements": 9,
+        "branches": 3,
+        "functions": 8,
+        "lines": 8
       }
     }
   },

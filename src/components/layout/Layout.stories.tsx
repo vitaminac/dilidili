@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react";
 import Layout from "./Layout";
 export default {
   component: Layout,
-  title: "Layout",
+  title: "dilidili/Layout",
 } as Meta;
 
 export const Normal: Story<{}> = () => (

@@ -1,5 +1,4 @@
-import { combineReducers } from "redux";
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { combineReducers, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Task, TaskState, VideoDetail } from "./shapes";
 
 function changeTaskState(taskState: TaskState) {

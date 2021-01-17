@@ -46,7 +46,7 @@ Builds the app for production to the `build` folder.
 ## ToDo
 
 - remove reqwest dependencies.
-- remove jquery dependencies.
+- remove jquery, @types/jquery dependencies.
 - remove slider.js, slider.css, main.css.
 - remove inline code ToDo
 - remove # in the url
@@ -54,7 +54,7 @@ Builds the app for production to the `build` folder.
 
 ## Best Practices
 
-* Gitflow
+- Gitflow
 
 ## Tutorial
 

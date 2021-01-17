@@ -1,18 +1,33 @@
+import $ from "jquery"; // TODO: remove
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
-import App from "./App";
 import { store } from "./store";
 import { FRONTEND_BASE_PATH } from "./config";
+import Layout from "./components/layout/Layout";
+import Routes from "./routes";
 import "./index.css";
+
+// TODO: remove
+declare global {
+  interface Window {
+    $: any;
+    jQuery: any;
+  }
+}
+window["$"] = window["jQuery"] = $;
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router basename={FRONTEND_BASE_PATH}>
-        <App />
+        <Layout>
+          <div id="main-container" className="concat">
+            {Routes}
+          </div>
+        </Layout>
       </Router>
     </Provider>
   </React.StrictMode>,

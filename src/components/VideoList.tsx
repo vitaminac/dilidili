@@ -2,22 +2,23 @@ import React from "react";
 import { VideoDetail } from "../shapes";
 import VideoListIdem from "./VideoListItem";
 
-export default class IndexHot extends React.Component<{
+interface Props {
   videos: VideoDetail[];
   loadVideosList: () => void;
-}> {
+}
+
+export default class VideoList extends React.Component<Props> {
   componentDidMount() {
     this.props.loadVideosList();
   }
 
   render() {
     return (
-      <div className="right-block floatleft">
+      <React.Fragment>
         {this.props.videos.slice(0, 6).map((video, index) => (
           <VideoListIdem key={index} {...video} />
         ))}
-        <div className="clear"></div>
-      </div>
+      </React.Fragment>
     );
   }
 }

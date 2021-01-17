@@ -15,7 +15,10 @@ export default class IndexPage extends React.Component {
           <div className="left-block floatleft">
             <IndexBanner />
           </div>
-          <IndexHot />
+          <div className="right-block floatleft">
+            <IndexHot />
+            <div className="clear"></div>
+          </div>
           <div className="clear"></div>
         </div>
         <AllRank />
