@@ -1,12 +1,13 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import { ReduxStoreTree, TaskState } from "./shapes";
-import rootReducer from "./reducers";
+import { tasksSlice, videosSlice, bannersSlice } from "./slices";
 
 const preloadedState: ReduxStoreTree =
   process.env.NODE_ENV === "production"
     ? {
         tasks: [],
         videos: {},
+        banners: [],
       }
     : {
         tasks: [
@@ -16,10 +17,15 @@ const preloadedState: ReduxStoreTree =
           { id: "4", title: "Task 4", state: TaskState.TASK_INBOX },
         ],
         videos: {},
+        banners: [],
       };
 
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: combineReducers({
+    tasks: tasksSlice.reducer,
+    videos: videosSlice.reducer,
+    banners: bannersSlice.reducer,
+  }),
   preloadedState: preloadedState,
   devTools: process.env.NODE_ENV !== "production",
 });

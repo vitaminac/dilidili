@@ -22,7 +22,12 @@ export interface VideoDetail {
   videoId: number;
 }
 
+export interface Banner {
+  url: string;
+  img: string;
+}
 export interface ReduxStoreTree {
   tasks: Task[];
   videos: Record<number, VideoDetail>;
+  banners: Banner[];
 }

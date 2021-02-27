@@ -1,4 +1,4 @@
-import $ from "jquery"; // TODO: remove
+import $ from "jquery";
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
@@ -10,7 +10,6 @@ import Layout from "./components/layout/Layout";
 import Routes from "./routes";
 import "./index.css";
 
-// TODO: remove
 declare global {
   interface Window {
     $: any;

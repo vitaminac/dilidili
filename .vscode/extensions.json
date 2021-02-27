@@ -2,6 +2,7 @@
   "recommendations": [
     "dbaeumer.vscode-eslint",
     "msjsdiag.debugger-for-chrome",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "orta.vscode-jest"
   ]
 }

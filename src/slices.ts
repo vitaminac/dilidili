@@ -1,5 +1,6 @@
-import { combineReducers, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Task, TaskState, VideoDetail } from "./shapes";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Banner, Task, TaskState, VideoDetail } from "./shapes";
+import { fetchHotVideos, fetchBanners } from "./actions";
 
 function changeTaskState(taskState: TaskState) {
   return (tasks: Task[], taskId: string): Task[] => {
@@ -25,23 +26,23 @@ export const tasksSlice = createSlice({
 export const videosSlice = createSlice({
   name: "videos",
   initialState: {} as Record<number, VideoDetail>,
-  reducers: {
-    mergeVideos(
-      videos: Record<number, VideoDetail>,
-      action: PayloadAction<VideoDetail[]>
-    ) {
-      return {
-        ...videos,
-        ...action.payload.reduce(
-          (obj, item) => Object.assign(obj, { [item.videoId]: item }),
-          {}
-        ),
-      };
-    },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(fetchHotVideos.fulfilled, (state, action) => {
+      action.payload.forEach(
+        (videoDetail) => (state[videoDetail.videoId] = videoDetail)
+      );
+    });
   },
 });
 
-export default combineReducers({
-  tasks: tasksSlice.reducer,
-  videos: videosSlice.reducer,
+export const bannersSlice = createSlice({
+  name: "banners",
+  initialState: [] as Banner[],
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(fetchBanners.fulfilled, (state, action) => {
+      return state.concat(action.payload);
+    });
+  },
 });
