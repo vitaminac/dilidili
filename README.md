@@ -72,6 +72,7 @@ Builds the app for production to the `build` folder.
 - [ ] [W3Schools](https://www.w3schools.com/)
 - [ ] [CSS Tricks](https://css-tricks.com/)
 - [ ] [Web Dev](https://web.dev/)
+- [ ] [Google Web Fundamentals](https://developers.google.com/web/fundamentals)
 
 ## Acknowledgement
 
