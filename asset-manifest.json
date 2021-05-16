@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/dilidili/static/css/main.7ec718cd.chunk.css",
+    "main.js": "/dilidili/static/js/main.62d0283a.chunk.js",
+    "main.js.map": "/dilidili/static/js/main.62d0283a.chunk.js.map",
+    "runtime-main.js": "/dilidili/static/js/runtime-main.4dd2715a.js",
+    "runtime-main.js.map": "/dilidili/static/js/runtime-main.4dd2715a.js.map",
+    "static/js/2.2d004a31.chunk.js": "/dilidili/static/js/2.2d004a31.chunk.js",
+    "static/js/2.2d004a31.chunk.js.map": "/dilidili/static/js/2.2d004a31.chunk.js.map",
+    "static/js/3.672af655.chunk.js": "/dilidili/static/js/3.672af655.chunk.js",
+    "static/js/3.672af655.chunk.js.map": "/dilidili/static/js/3.672af655.chunk.js.map",
+    "index.html": "/dilidili/index.html",
+    "static/css/main.7ec718cd.chunk.css.map": "/dilidili/static/css/main.7ec718cd.chunk.css.map",
+    "static/js/2.2d004a31.chunk.js.LICENSE.txt": "/dilidili/static/js/2.2d004a31.chunk.js.LICENSE.txt",
+    "static/media/Header.module.css": "/dilidili/static/media/bg.a3618bf6.png",
+    "static/media/index.css": "/dilidili/static/media/percolate.fae78e19.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4dd2715a.js",
+    "static/js/2.2d004a31.chunk.js",
+    "static/css/main.7ec718cd.chunk.css",
+    "static/js/main.62d0283a.chunk.js"
+  ]
+}
